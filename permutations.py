@@ -12,9 +12,10 @@ def backtrack(vector, k, n):
 	size n, where vector[i] = some number between 1 and n and is part of the
 	active permutation being generated
 
-	s: the list of subsets we have seen thus far
+	k: the index of the permutation to generate
 
-	n: the size of the set we are generating subsets of
+	n: the the maximum number in the range that we are generating permutations
+	of
 	"""
 	if k == n:
 		print(vector)
