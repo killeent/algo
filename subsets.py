@@ -22,18 +22,17 @@ def backtrack(vector, s, k, n):
 	"""	
 
 	if (k == n):
-		return s
+		return
 	else:
 		for i in range(0, 2):
 			vector.append(True if i == 0 else False)
-			s = print_subset(vector, s, k)
-			s = backtrack(vector, s, k+1, n)
+			print_subset(vector, s, k)
+			backtrack(vector, s, k+1, n)
 			vector.pop(k-1)
-		return s
 
 def print_subset(vector, s, k):
 	"""
-	prints the subset of 1...k represent by vector if it is not in the set s
+	prints the subset of 1...k represent by vector if it is not in the list s
 	"""
 	output = list()
 	for i in range(1, k+1):
@@ -42,7 +41,6 @@ def print_subset(vector, s, k):
 	if output not in s:
 		print(output)
 		s.append(output)
-	return s
 
 def main():
 	n = int(raw_input("Enter a number: "))
